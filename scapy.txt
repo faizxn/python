@@ -1,0 +1,30 @@
+
+
+  + sniff(count=10)
+  
+  
+  + a = _
+  + a.summary()
+  
+  
+  + sniff(count=100, prn=lambda var: var.summary())
+  + sniff(iface="Ethernet", prn=lambda var: var.summary())
+  
+  + sniff(iface="Ethernet", count=10, prn=lambda var: var.show()) 			|| full descriptions about the packet..
+
+#read-packet
+
+  + pkt = rdpcap("E:\pkt\pkt.pcap")
+  + pkt											|| show total tcp..udp..icmp.. 
+  
+  + pkt = pkt [100]								|| show about 100 number packet details
+  + type(pkt)
+  + hexdump(pkt)
+  + ls(pkt)
+  
+  
+  
+  
+  
+  
+  
