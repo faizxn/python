@@ -1,30 +1,32 @@
 
 
-  + sniff(count=10)
-  
-  
-  + a = _
-  + a.summary()
-  
-  
-  + sniff(count=100, prn=lambda var: var.summary())
-  + sniff(iface="Ethernet", prn=lambda var: var.summary())
-  
-  + sniff(iface="Ethernet", count=10, prn=lambda var: var.show()) 			|| full descriptions about the packet..
 
-#read-packet
+	sniff(count=100)												|| show number of packet of tcp..udp..icmp.. and other
+  
+	var = _ 														|| load all packets deatils to variable 'var' shows sniff packets 
+	var.summary()
+  		
+	sniff(count=1000, prn=lambda x: x.summary())					|| show 1000 packet logs with deatils
 
-  + pkt = rdpcap("E:\pkt\pkt.pcap")
-  + pkt											|| show total tcp..udp..icmp.. 
-  
-  + pkt = pkt [100]								|| show about 100 number packet details
-  + type(pkt)
-  + hexdump(pkt)
-  + ls(pkt)
-  
-  
-  
-  
-  
-  
+
+	sniff(iface="Ethernet", prn=lambda x: x.summary())				|| show packet details unless stop
+
+	sniff(count=100, prn=lambda x: x.show())						|| show osi layer deatils using show() function with count function
+	sniff(iface="Ethernet", prn=lambda x: x.show())					|| show osi layer deatils using show() function unlimited
+	
+	
+	
+	|| read-pcap-file 
+	
+	pkt = rdpcap(r"C:\Users\Administrator\Desktop\scapy\test.pcap")
+	type(pkt)
+	len(pkt)														|| show number of packet
+	showpkt = pkt[100]												|| show 100 number packet deatils
+	
+	
+	|| crafting-customized-packets
+	
+	
+	
+
   
