@@ -17,28 +17,28 @@ client = paramiko.SSHClient()
 client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
 
-uttaranat = {'hostname': '59.153.100.110', 'port': '2020', 'username':'faiz', 'password':'!@#BanglaDesh!@#'}
-greenroadnat = {'hostname': '59.153.100.118', 'port': '2020', 'username':'faiz', 'password':'!@#BanglaDesh!@#'}
+uttaranat = {'hostname': '59.153.100.110', 'port': '2020', 'username':'faiz', 'password':'###'}
+greenroadnat = {'hostname': '59.153.100.118', 'port': '2020', 'username':'faiz', 'password':'###'}
 
 
-mirpurboro = {'hostname': '59.153.100.9', 'port': '2020', 'username':'faiz', 'password':'!@#BanglaDesh!@#'}
-dhakauddan = {'hostname': '59.153.100.14', 'port': '2020', 'username':'faiz', 'password':'!@#BanglaDesh!@#'}
-banani = {'hostname': '59.153.100.15', 'port': '2020', 'username':'faiz', 'password':'!@#BanglaDesh!@#'}
-hq = {'hostname': '59.153.100.17', 'port': '2020', 'username':'faiz', 'password':'!@#BanglaDesh!@#'}
-dhanmondi = {'hostname': '59.153.100.21', 'port': '2020', 'username':'faiz', 'password':'!@#BanglaDesh!@#'}
-modhubazar = {'hostname': '59.153.100.22', 'port': '2020', 'username':'faiz', 'password':'!@#BanglaDesh!@#'}
-monshurabad = {'hostname': '59.153.100.24', 'port': '2020', 'username':'faiz', 'password':'!@#BanglaDesh!@#'}
-bosila = {'hostname': '59.153.100.25', 'port': '2020', 'username':'faiz', 'password':'!@#BanglaDesh!@#'}
-jigatola = {'hostname': '59.153.100.26', 'port': '2020', 'username':'faiz', 'password':'!@#BanglaDesh!@#'}
-basundhara = {'hostname': '59.153.100.27', 'port': '2020', 'username':'faiz', 'password':'!@#BanglaDesh!@#'}
-tejkunipara = {'hostname': '59.153.100.28', 'port': '2020', 'username':'faiz', 'password':'!@#BanglaDesh!@#'}
-nimtola = {'hostname': '59.153.100.29', 'port': '2020', 'username':'faiz', 'password':'!@#BanglaDesh!@#'}
-jamunafuturepark = {'hostname': '59.153.100.35', 'port': '2020', 'username':'faiz', 'password':'!@#BanglaDesh!@#'}
-jamuna = {'hostname': '59.153.100.31', 'port': '2020', 'username':'faiz', 'password':'!@#BanglaDesh!@#'}
-atibazar = {'hostname': '59.153.100.34', 'port': '2020', 'username':'faiz', 'password':'!@#BanglaDesh!@#'}
-shamoly = {'hostname': '59.153.100.11', 'port': '2020', 'username':'faiz', 'password':'!@#BanglaDesh!@#'}
-mohammadpur = {'hostname': '59.153.100.16', 'port': '2020', 'username':'faiz', 'password':'!@#BanglaDesh!@#'}
-niknet = {'hostname': '59.153.100.12', 'port': '2020', 'username':'faiz', 'password':'!@#BanglaDesh!@#'}
+mirpurboro = {'hostname': '59.153.100.9', 'port': '2020', 'username':'faiz', 'password':'###'}
+dhakauddan = {'hostname': '59.153.100.14', 'port': '2020', 'username':'faiz', 'password':'###'}
+banani = {'hostname': '59.153.100.15', 'port': '2020', 'username':'faiz', 'password':'###'}
+hq = {'hostname': '59.153.100.17', 'port': '2020', 'username':'faiz', 'password':'###'}
+dhanmondi = {'hostname': '59.153.100.21', 'port': '2020', 'username':'faiz', 'password':'###'}
+modhubazar = {'hostname': '59.153.100.22', 'port': '2020', 'username':'faiz', 'password':'###'}
+monshurabad = {'hostname': '59.153.100.24', 'port': '2020', 'username':'faiz', 'password':'###'}
+bosila = {'hostname': '59.153.100.25', 'port': '2020', 'username':'faiz', 'password':'###'}
+jigatola = {'hostname': '59.153.100.26', 'port': '2020', 'username':'faiz', 'password':'###'}
+basundhara = {'hostname': '59.153.100.27', 'port': '2020', 'username':'faiz', 'password':'###'}
+tejkunipara = {'hostname': '59.153.100.28', 'port': '2020', 'username':'faiz', 'password':'###'}
+nimtola = {'hostname': '59.153.100.29', 'port': '2020', 'username':'faiz', 'password':'###'}
+jamunafuturepark = {'hostname': '59.153.100.35', 'port': '2020', 'username':'faiz', 'password':'###'}
+jamuna = {'hostname': '59.153.100.31', 'port': '2020', 'username':'faiz', 'password':'###'}
+atibazar = {'hostname': '59.153.100.34', 'port': '2020', 'username':'faiz', 'password':'###'}
+shamoly = {'hostname': '59.153.100.11', 'port': '2020', 'username':'faiz', 'password':'###'}
+mohammadpur = {'hostname': '59.153.100.16', 'port': '2020', 'username':'faiz', 'password':'###'}
+niknet = {'hostname': '59.153.100.12', 'port': '2020', 'username':'faiz', 'password':'###'}
 
 
 routers = [ uttaranat, greenroadnat, mirpurboro, dhakauddan, banani, hq, dhanmondi, mohammadpur, modhubazar, monshurabad, bosila, jigatola, basundhara, tejkunipara, nimtola, jamunafuturepark, jamuna, atibazar, shamoly, niknet]
