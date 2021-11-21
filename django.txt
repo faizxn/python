@@ -1,0 +1,51 @@
+ 
+ 
+ 
+ #create python project 
+ 
+	django-admin startproject mysite
+	
+	cd mysite
+	python manage.py runserver
+	
+	
+	+views.py 												|| create views.py files
+	from django.http import HttpResponse
+	def home(request):
+		return HttpResponse('Home Page!!!')
+	
+	
+	+urls.py 	
+	from . import views										|| add this views at urls
+	path('', views.home),									|| add this views function
+ 
+ 
+ #create an apps named employee 
+
+	django-admin startapp employee
+	
+	add 'employee' under INSTALLED-APPS at settings.py		|| every apps has to add here
+		
+	add 'include' keywords after 'path'						|| linked child urls.py with parent urls.py
+	under urlpatterns
+		path('employee/', include('employee.urls')),
+	
+	
+	urls.py 												|| create urls.py at apps
+	from django.urls import path
+	from . import views
+	
+	urlpatterns = [
+		path('', views.employee),
+	]
+	
+	views.py 												|| update the method
+	from django.http.response import HttpResponse
+	from django.shortcuts import render
+
+	def employee(request):
+		return HttpResponse("Employee Page")
+
+ # MVT
+	
+	
