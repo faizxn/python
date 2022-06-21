@@ -1,51 +1,170 @@
- 
- 
- 
- #create python project 
- 
-	django-admin startproject mysite
-	
-	cd mysite
-	python manage.py runserver
-	
-	
-	+views.py 												|| create views.py files
-	from django.http import HttpResponse
-	def home(request):
-		return HttpResponse('Home Page!!!')
-	
-	
-	+urls.py 	
-	from . import views										|| add this views at urls
-	path('', views.home),									|| add this views function
- 
- 
- #create an apps named employee 
 
-	django-admin startapp employee
+
+
+
+ ##### Hello-World project ####
+ 
+ 
+ create-project		: django-admin startproject helloworld_project .
+ run project   		: python manage.py runserver
+ 
+ create-applicaion	: python manage.py startapp main_application		|| after creating apps,  add this to settings.py-> installed app
+ 
+ 
+ 	from django.urls import path, include								|| add include method
+
+	urlpatterns = [
+    		path('admin/', admin.site.urls),
+    		path('', include('main_application.urls'))						
+    	]
+
+ + by default, apps folder has no default urls.py file, need to create this -> urls.py at main_application 
 	
-	add 'employee' under INSTALLED-APPS at settings.py		|| every apps has to add here
-		
-	add 'include' keywords after 'path'						|| linked child urls.py with parent urls.py
-	under urlpatterns
-		path('employee/', include('employee.urls')),
-	
-	
-	urls.py 												|| create urls.py at apps
 	from django.urls import path
 	from . import views
-	
+
 	urlpatterns = [
-		path('', views.employee),
+    		path('', views.homeView, name='home'),
 	]
 	
-	views.py 												|| update the method
-	from django.http.response import HttpResponse
-	from django.shortcuts import render
+	
+ + at views.py, write below method
+ 
+ from django.http import HttpResponse
 
-	def employee(request):
-		return HttpResponse("Employee Page")
+	def homeView(request):
+		return HttpResponse("Hello Bangladesh,  from Django Project !!!")
 
- # MVT
 	
 	
+
+
+
+
+
+
+
+
+
+
+ #### Hello-Template project #####
+ 
+ + at main_application->urls.py  
+
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.homeView.as_view(), name='home'),
+    path('about/', views.aboutView.as_view(), name='about')
+]
+ 
+
+ 
++ at main_application->views.py  
+ 
+from django.views.generic import TemplateView
+
+class homeView(TemplateView):
+    template_name = "index.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context['name'] = 'UCB Fintech Company Limited'
+        context['country'] = 'Bangladesh'
+
+        lists = [1, 2, 3, 4, 5]
+        context['list'] = lists
+
+        return context
+
+
+class aboutView(TemplateView):
+    template_name = "about.html"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++ templates->base.html
+
+<!DOCTYPE html>
+<head>
+   <title> About me</title>
+</head>
+
+<body>
+<nav>
+   <a href="/">Home</a> |
+   <a href="{% url 'about' %}">About</a> |
+   <a href="{% url 'about' %}">Contact Us</a> |
+</nav>
+
+{% block body %}
+{% endblock %}
+
+</body>
+<html>
+
+
+
++ templates->index.html
+
+{% extends 'base.html' %}
+{% block body %}
+
+<h1> My Simple HTML Webpage </h1>
+
+<p>{{ name|lower }}</p>
+<p>{{ country|upper }}</p>
+
+<p>
+   {% for number in list %}
+   {% if number <= 3 %}
+      <h{{ number }}> Life is awesome !!! </h{{ number }}>
+
+   {% else %}
+      <h{{ number }}> Life is difficult !!! </h{{ number }}>
+   {% endif %}
+   {% endfor %}
+</p>
+{% endblock %}
+
+
+
+
+++ templates->about.html
+
+{% extends 'base.html' %}
+{% block body %}
+<h1> About me </h1>
+{% endblock %}
+
+
+
+
+++ main_application->test
+
+from django.test import SimpleTestCase
+
+class MainApplicationTest(SimpleTestCase):
+    def test_home_view_exist(self):
+        reponse_code = self.client.get('/')
+        self.assertEqual(response.status_code, 200)
+
+class MainApplicationTest(SimpleTestCase):
+    def test_about_view_exist(self):
+        reponse_code = self.client.get('/about/')
+        self.assertEqual(response.status_code, 200)
+
